@@ -48,6 +48,3 @@ marp: true
     quantite_commmande
 )
  ---
-# MCD
- * Realisation d'une diagramme MCD
-    ![[MCD image]]()
