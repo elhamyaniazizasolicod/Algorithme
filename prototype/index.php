@@ -6,6 +6,7 @@ SELECT
     COURS.titre,
     COURS.description,
     COURS.duree,
+    COURS.image,
     FORMATEUR.nom,
     FORMATEUR.prenom,
     MATIERE.nom_matiere
@@ -64,9 +65,19 @@ $cours = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <div class="cours-container">
 
+    <?php if (count($cours) > 0) { ?>
+
         <?php foreach ($cours as $cour) { ?>
 
             <div class="cours">
+
+                <?php if (!empty($cour["image"])) { ?>
+                    <img
+                        src="<?= htmlspecialchars($cour["image"]) ?>"
+                        alt="<?= htmlspecialchars($cour["titre"]) ?>"
+                        class="cours-image"
+                    >
+                <?php } ?>
 
                 <h3>
                     <?= htmlspecialchars($cour["titre"]) ?>
@@ -90,19 +101,17 @@ $cours = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 <p>
                     <strong>Matière :</strong>
-                    <?= htmlspecialchars(
-                        $cour["nom_matiere"]
-                    ) ?>
+                    <?= htmlspecialchars($cour["nom_matiere"]) ?>
                 </p>
 
             </div>
 
         <?php } ?>
 
-    </div>
+    <?php } else { ?>
 
-</main>
+        <p>Aucun cours trouvé.</p>
 
-</body>
+    <?php } ?>
 
-</html>
+</div>

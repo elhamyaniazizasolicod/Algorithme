@@ -35,3 +35,18 @@ CREATE TABLE COURS (
     FOREIGN KEY (id_matiere)
         REFERENCES MATIERE(id_matiere)
 );
+
+INSERT INTO FORMATEUR (nom, prenom, email) VALUES
+('Alami', 'Sara', 'sara@gmail.com'),
+('Bennani', 'Youssef', 'youssef@gmail.com'),
+('Amrani', 'Imane', 'imane@gmail.com'),
+('Alaoui', 'Omar', 'omar@gmail.com'),
+('El Idrissi', 'Salma', 'salma@gmail.com');
+
+
+INSERT INTO MATIERE (nom_matiere, description) VALUES
+('PHP', 'Programmation côté serveur avec PHP'),
+('JavaScript', 'Développement web avec JavaScript'),
+('HTML & CSS', 'Création et mise en forme des pages web'),
+('MySQL', 'Gestion et manipulation des bases de données'),
+('Git & GitHub', 'Gestion des versions et collaboration');

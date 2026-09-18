@@ -1,6 +1,6 @@
 <?php
 
-require "Connexion.php";
+require_once "../connexion.php";
 
 $sql = "
 SELECT 
@@ -36,7 +36,7 @@ $cours = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <title>Administration</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 
 </head>
 
@@ -48,11 +48,11 @@ $cours = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <nav>
 
-        <a href="index.php">Accueil</a>
+        <a href="../index.php">Accueil</a>
 
-        <a href="Admin/admin.php">Admin</a>
+        <a href="admin.php">Admin</a>
 
-        <a href="Admin/ajouter.php">Ajouter un cours</a>
+        <a href="ajouter.php">Ajouter un cours</a>
 
     </nav>
 
@@ -63,7 +63,7 @@ $cours = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <h2>Gestion des cours</h2>
 
-    <a class="btn" href="Admin/ajouter.php">
+    <a class="btn" href="ajouter.php">
         + Ajouter un cours
     </a>
 
